@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<title>Rocket League Random Camera Settings Generator</title>
 </head>
 <body>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+<h1>Rocket League Random Camera Settings Generator</h1>
+<p id="fov">Field of View = 60° - 110°</p>
+<p id="distance">Distance = 100 - 400</p>
+<p id="height">Height = 40 - 200</p>
+<p id="angle">Angle = -15 - 0</p>
+<p id="stiffness">Stiffness = 0.00 - 1.00</p>
+  
+<button onclick="
+  var fov = Math.floor(Math.random() * 51) + 60;
+  var distance = (Math.floor(Math.random() * 31) + 10) * 10;
+  var height = (Math.floor(Math.random() * 17) + 4) * 10;
+  var angle = -(Math.floor(Math.random() * 16));
+  var stiffness = (Math.floor(Math.random() * 11)) * 0.1;
+  if(stiffness != 1) {
+      stiffness += (Math.floor(Math.random()*2))*0.05;         
+  }
+  document.getElementById('fov').innerHTML = 'Field of View = ' + fov + '°';
+  document.getElementById('distance').innerHTML = 'Distance = ' + distance;                                                         
+  document.getElementById('height').innerHTML = 'Height = ' + height;                 
+  document.getElementById('angle').innerHTML = 'Angle = ' + angle;                 
+  document.getElementById('stiffness').innerHTML = 'Stiffness = ' + stiffness;                                                             
+">Randomize</button>
 
 </body>
 </html>
